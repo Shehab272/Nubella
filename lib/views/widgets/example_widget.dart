@@ -13,7 +13,7 @@ class ExampleWidget extends StatelessWidget {
       width: double.infinity,
       margin: const EdgeInsets.only(bottom: 16),
       decoration: BoxDecoration(
-            color: Colors.grey[800],
+            color: Color.fromRGBO(31, 30, 46, 1.0),
           borderRadius: BorderRadius.circular(8)
       ),
       padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 36),

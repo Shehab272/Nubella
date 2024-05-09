@@ -16,7 +16,7 @@ class SignInView extends StatefulWidget {
 
 class _SignInViewState extends State<SignInView> {
   final _formSignInKey = GlobalKey<FormState>();
-  bool rememberPassword = true;
+  bool rememberPassword = false;
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
@@ -33,7 +33,7 @@ class _SignInViewState extends State<SignInView> {
             child: Container(
               padding: const EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 20.0),
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Color.fromRGBO(167, 158, 226, 60.0),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40.0),
                   topRight: Radius.circular(40.0),
@@ -45,12 +45,12 @@ class _SignInViewState extends State<SignInView> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Welcome back',
                         style: TextStyle(
                           fontSize: 30.0,
                           fontWeight: FontWeight.w900,
-                          color: lightColorScheme.primary,
+                          color: Color.fromRGBO(62, 31, 49, 1.0),
                         ),
                       ),
                       const SizedBox(
@@ -130,22 +130,23 @@ class _SignInViewState extends State<SignInView> {
                                     rememberPassword = value!;
                                   });
                                 },
-                                activeColor: lightColorScheme.primary,
+                                activeColor:
+                                    const Color.fromRGBO(93, 93, 147, 1.0),
                               ),
                               const Text(
                                 'Remember me',
                                 style: TextStyle(
-                                  color: Colors.black45,
+                                  color: Color.fromRGBO(21, 21, 33, 1.0),
                                 ),
                               ),
                             ],
                           ),
                           GestureDetector(
-                            child: Text(
+                            child: const Text(
                               'Forget password?',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: lightColorScheme.primary,
+                                color: Color.fromRGBO(62, 31, 49, 1.0),
                               ),
                             ),
                           ),
@@ -155,15 +156,13 @@ class _SignInViewState extends State<SignInView> {
                         height: 25.0,
                       ),
                       SizedBox(
-                        width: double.infinity,
+                        width: MediaQuery.sizeOf(context).width*0.3,
                         child: ElevatedButton(
                           onPressed: () {
                             if (_formSignInKey.currentState!.validate() &&
                                 rememberPassword) {
-
-
-
-                              Navigator.pushReplacementNamed(context, AppRoutes.homeView);
+                              Navigator.pushReplacementNamed(
+                                  context, AppRoutes.homeView);
                             } else if (!rememberPassword) {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
@@ -172,7 +171,12 @@ class _SignInViewState extends State<SignInView> {
                               );
                             }
                           },
-                          child: const Text('Sign in'),
+                          child: const Text(
+                            'Sign in',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
                       const SizedBox(
@@ -193,7 +197,7 @@ class _SignInViewState extends State<SignInView> {
                               horizontal: 10,
                             ),
                             child: Text(
-                              'Sign up with',
+                              'Sign in with',
                               style: TextStyle(
                                 color: Colors.black45,
                               ),
@@ -225,21 +229,21 @@ class _SignInViewState extends State<SignInView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text(
-                            'Don\'t have an account?',
+                            'Don\'t have an account? ',
                             style: TextStyle(
                               color: Colors.black45,
                             ),
                           ),
                           GestureDetector(
                             onTap: () {
-                              Navigator.pushReplacementNamed(context, AppRoutes.signUpView);
-
+                              Navigator.pushReplacementNamed(
+                                  context, AppRoutes.signUpView);
                             },
-                            child: Text(
+                            child: const Text(
                               'Sign up',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: lightColorScheme.primary,
+                                color: Color.fromRGBO(62, 31, 49, 1.0),
                               ),
                             ),
                           ),

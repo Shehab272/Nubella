@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
 var size  = MediaQuery.sizeOf(context).width;
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+      backgroundColor: Color.fromRGBO(21, 21, 33, 1.0),
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
@@ -46,14 +46,18 @@ var size  = MediaQuery.sizeOf(context).width;
                   SizedBox(height: 24),
                   Text(
                     "Welcome To \n Nubella",
-                    style: textTheme.headlineMedium?.copyWith(
+                    style: textTheme.headlineLarge?.copyWith(
                         fontWeight: FontWeight.bold, color: Colors.white),
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 12),
                   Text(
                     "How can I help you today?",
-                    style: textTheme.bodyMedium,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Color.fromRGBO(99, 137, 241, 1.0)
+                    ),
+
                   ),
                   Expanded(
                     child: Center(
@@ -103,15 +107,16 @@ var size  = MediaQuery.sizeOf(context).width;
                       Navigator.pushNamed(context, AppRoutes.chatView);
                     },
                     style: TextButton.styleFrom(
-                      backgroundColor: onHover == true? Colors.red :Colors.white,
+                      backgroundColor: onHover == true? Color.fromRGBO(99, 137, 241, 1.0) :Color.fromRGBO(117, 117, 185, 1.0),
 
                     ),
                     child:  Padding(
                       padding: EdgeInsets.all(size >500?15.0:5),
                       child:  Text("Ask Now",
                       style: TextStyle(
+                        color: Color.fromRGBO(21, 21, 33, 1.0),
                         fontWeight: FontWeight.w700,
-                        color: onHover == true? Colors.white :Colors.grey[800],
+                       // color: onHover == true? Color.fromRGBO(75, 90, 161, 1.0) :Colors.purple,
                         fontSize: 20,
                       ),
 

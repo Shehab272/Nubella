@@ -4,9 +4,6 @@ import 'package:nubella/routes.dart';
 import 'package:nubella/theme/theme.dart';
 import 'package:nubella/views/widgets/custom_scaffold.dart';
 
-import 'signin_screen.dart';
-
-
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
 
@@ -16,7 +13,7 @@ class SignUpView extends StatefulWidget {
 
 class _SignUpViewState extends State<SignUpView> {
   final _formSignupKey = GlobalKey<FormState>();
-  bool agreePersonalData = true;
+
   @override
   Widget build(BuildContext context) {
     return CustomScaffold(
@@ -154,50 +151,18 @@ class _SignUpViewState extends State<SignUpView> {
                         height: 25.0,
                       ),
                       // i agree to the processing
-                      Row(
-                        children: [
-                          Checkbox(
-                            value: agreePersonalData,
-                            onChanged: (bool? value) {
-                              setState(() {
-                                agreePersonalData = value!;
-                              });
-                            },
-                            activeColor: lightColorScheme.primary,
-                          ),
-                          const Text(
-                            'I agree to the processing of ',
-                            style: TextStyle(
-                              color: Colors.black45,
-                            ),
-                          ),
-                          Text(
-                            'Personal data',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: lightColorScheme.primary,
-                            ),
-                          ),
-                        ],
-                      ),
+
                       const SizedBox(
                         height: 25.0,
                       ),
                       // signup button
                       SizedBox(
-                        width: double.infinity,
+                        width: MediaQuery.sizeOf(context).width * 0.3,
                         child: ElevatedButton(
                           onPressed: () {
-                            if (_formSignupKey.currentState!.validate() &&
-                                agreePersonalData) {
-                              Navigator.pushReplacementNamed(context, AppRoutes.homeView);
-
-                            } else if (!agreePersonalData) {
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content: Text(
-                                        'Please agree to the processing of personal data')),
-                              );
+                            if (_formSignupKey.currentState!.validate()) {
+                              Navigator.pushReplacementNamed(
+                                  context, AppRoutes.homeView);
                             }
                           },
                           child: const Text('Sign up'),
@@ -243,7 +208,9 @@ class _SignUpViewState extends State<SignUpView> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                                SvgPicture.asset("assets/images/icons8-google-logo.svg"),
+                          SvgPicture.asset(
+                              "assets/images/icons8-google-logo.svg"),
+
                           ///Logo(Logos.google),
                           // Image.asset("assets/images/google_300221.png",
                           //   height: 40,
@@ -265,7 +232,8 @@ class _SignUpViewState extends State<SignUpView> {
                           ),
                           GestureDetector(
                             onTap: () {
-                              Navigator.pushReplacementNamed(context, AppRoutes.signInView);
+                              Navigator.pushReplacementNamed(
+                                  context, AppRoutes.signInView);
                             },
                             child: Text(
                               'Sign in',

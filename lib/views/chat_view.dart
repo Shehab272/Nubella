@@ -14,7 +14,7 @@ class ChatView extends StatefulWidget {
 class _ChatViewState extends State<ChatView> {
   final TextEditingController _chatController = TextEditingController();
   final ScrollController _scrollController = ScrollController();
-  List<Map<String, dynamic>> _chatHistory = [];
+  final List<Map<String, dynamic>> _chatHistory = [];
 
   @override
   Widget build(BuildContext context) {
@@ -59,21 +59,20 @@ class _ChatViewState extends State<ChatView> {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
-      body: Stack(
+      body: Column(
         children: [
           Container(
             //get max height
             height: MediaQuery.of(context).size.height - 160,
             child: ListView.builder(
               itemCount: _chatHistory.length,
-              shrinkWrap: false,
               controller: _scrollController,
-              padding: const EdgeInsets.only(top: 10, bottom: 10),
+              padding: const EdgeInsets.only(bottom: 10),
               physics: const BouncingScrollPhysics(),
               itemBuilder: (context, index) {
                 return Container(
-                  padding:
-                      EdgeInsets.only(left: 14, right: 14, top: 10, bottom: 10),
+                  padding: const EdgeInsets.only(
+                      left: 14, right: 14, top: 10, bottom: 10),
                   child: Align(
                     alignment: (_chatHistory[index]["isSender"]
                         ? Alignment.topRight
@@ -81,106 +80,67 @@ class _ChatViewState extends State<ChatView> {
                     child: Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
-                            spreadRadius: 2,
-                            blurRadius: 5,
-                            offset: const Offset(0, 3),
-                          ),
-                        ],
                         color: (_chatHistory[index]["isSender"]
-                            ? Color(0xFFF69170)
+                            ? Colors.blue
                             : Colors.white),
                       ),
-                      padding: EdgeInsets.all(16),
-                      child: Text(_chatHistory[index]["message"],
-                          style: TextStyle(
-                              fontSize: 15,
-                              color: _chatHistory[index]["isSender"]
-                                  ? Colors.white
-                                  : Colors.black)),
+                      padding: const EdgeInsets.all(16),
+                      child: Text(
+                        _chatHistory[index]["message"],
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: _chatHistory[index]["isSender"]
+                              ? Colors.white
+                              : Colors.black,
+                        ),
+                      ),
                     ),
                   ),
                 );
               },
             ),
           ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 60,
-              margin: const EdgeInsetsDirectional.only(bottom: 20),
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              width: MediaQuery.sizeOf(context).width * .8,
-              decoration: BoxDecoration(
-                color: Colors.grey[900],
-                borderRadius: BorderRadius.circular(40),
-              ),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                      ),
-                      child: TextField(
+          Container(
+            margin: EdgeInsetsDirectional.only(top: 30),
+            width: MediaQuery.sizeOf(context).width * .8,
+            decoration: BoxDecoration(
+              color: Colors.grey[900],
+              borderRadius: BorderRadius.circular(40),
+            ),
+            child: TextField(
+              keyboardType: TextInputType.multiline,
+              maxLines: 2,
+              decoration: InputDecoration(
+                contentPadding:
+                    const EdgeInsetsDirectional.only(start: 20.0, top: 20.0),
+                suffixIcon: MaterialButton(
+                  onPressed: () {
+                    setState(() {
+                      if (_chatController.text.isNotEmpty) {
+                        _chatHistory.add({
+                          "time": DateTime.now(),
+                          "message": _chatController.text,
+                          "isSender": true,
+                        });
+                        _chatController.clear();
+                      }
+                    });
+                    _scrollController.jumpTo(
+                      _scrollController.position.maxScrollExtent,
+                    );
 
-                        keyboardType: TextInputType.multiline,
-                        // maxLength: 8000,
-                        maxLines: 2,
-                        decoration: const InputDecoration.collapsed(
-
-                          hintText: "Type a message",
-                          border: InputBorder.none,
-                        ),
-                        controller: _chatController,
-                      ),
-                    ),
+                    getAnswer();
+                  },
+                  shape: const StadiumBorder(),
+                  child: const Icon(
+                    Icons.send,
+                    color: Colors.white,
                   ),
-                  const SizedBox(
-                    width: 4.0,
-                  ),
-                  MaterialButton(
-                    onPressed: () {
-                      setState(() {
-                        if (_chatController.text.isNotEmpty) {
-                          _chatHistory.add({
-                            "time": DateTime.now(),
-                            "message": _chatController.text,
-                            "isSender": true,
-                          });
-                          _chatController.clear();
-                        }
-                      });
-                      _scrollController.jumpTo(
-                        _scrollController.position.maxScrollExtent,
-                      );
-
-                      getAnswer();
-                    },
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(80.0)),
-                    padding: const EdgeInsets.all(0.0),
-                    child: Ink(
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(50.0)),
-                      ),
-                      child: Container(
-                          constraints: const BoxConstraints(
-                              minWidth: 88.0,
-                              minHeight:
-                                  36.0), // min sizes for Material buttons
-                          alignment: Alignment.center,
-                          child: const Icon(
-                            Icons.send,
-                            color: Colors.white,
-                          )),
-                    ),
-                  )
-                ],
+                ),
+                hintText: "Type a message",
+                border: InputBorder.none,
               ),
+              controller: _chatController,
             ),
           )
         ],
