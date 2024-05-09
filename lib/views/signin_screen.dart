@@ -158,6 +158,9 @@ class _SignInViewState extends State<SignInView> {
                       SizedBox(
                         width: MediaQuery.sizeOf(context).width*0.3,
                         child: ElevatedButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                          ),
                           onPressed: () {
                             if (_formSignInKey.currentState!.validate() &&
                                 rememberPassword) {

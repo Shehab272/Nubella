@@ -53,7 +53,11 @@ class _ChatViewState extends State<ChatView> {
     }
 
     return Scaffold(
+      backgroundColor: Color.fromRGBO(21, 21, 33, 1.0),
       appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: Color.fromRGBO(21, 21, 33, 1.0),
+
         title: const Text(
           "Chat",
           style: TextStyle(fontWeight: FontWeight.bold),
@@ -104,7 +108,8 @@ class _ChatViewState extends State<ChatView> {
             margin: EdgeInsetsDirectional.only(top: 30),
             width: MediaQuery.sizeOf(context).width * .8,
             decoration: BoxDecoration(
-              color: Colors.grey[900],
+             color: Colors.purple,
+
               borderRadius: BorderRadius.circular(40),
             ),
             child: TextField(

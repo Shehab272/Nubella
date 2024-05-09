@@ -30,7 +30,7 @@ class _SignUpViewState extends State<SignUpView> {
             child: Container(
               padding: const EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 20.0),
               decoration: const BoxDecoration(
-                color: Colors.white,
+                color: Color.fromRGBO(167, 158, 226, 60.0),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40.0),
                   topRight: Radius.circular(40.0),
@@ -49,7 +49,7 @@ class _SignUpViewState extends State<SignUpView> {
                         style: TextStyle(
                           fontSize: 30.0,
                           fontWeight: FontWeight.w900,
-                          color: lightColorScheme.primary,
+                          color: Color.fromRGBO(62, 31, 49, 1.0),
                         ),
                       ),
                       const SizedBox(
@@ -239,7 +239,7 @@ class _SignUpViewState extends State<SignUpView> {
                               'Sign in',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: lightColorScheme.primary,
+                                color: Color.fromRGBO(62, 31, 49, 1.0),
                               ),
                             ),
                           ),
