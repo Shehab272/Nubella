@@ -16,9 +16,9 @@ class WelcomeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      color: const Color.fromRGBO(83, 79, 112, 100.0),
+      color: const Color.fromRGBO(75, 78, 113, 20.0),
       onPressed: onTap,
-      hoverColor: Colors.blue,
+      hoverColor: const Color.fromRGBO(174, 122, 96, 20.0),
 
       shape: const StadiumBorder(),
       child: Text(

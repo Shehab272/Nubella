@@ -26,9 +26,9 @@ class _SignUpViewState extends State<SignUpView> {
             ),
           ),
           Expanded(
-            flex: 7,
+            flex: 18,
             child: Container(
-              padding: const EdgeInsets.fromLTRB(25.0, 50.0, 25.0, 20.0),
+              padding: const EdgeInsets.fromLTRB(25.0, 35.0, 25.0, 20.0),
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(167, 158, 226, 60.0),
                 borderRadius: BorderRadius.only(
@@ -36,220 +36,224 @@ class _SignUpViewState extends State<SignUpView> {
                   topRight: Radius.circular(40.0),
                 ),
               ),
-              child: SingleChildScrollView(
-                // get started form
-                child: Form(
-                  key: _formSignupKey,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      // get started text
-                      Text(
-                        'Get Started',
+              child: Form(
+                key: _formSignupKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    // get started text
+                    Text(
+                      'Get Started',
+                      style: TextStyle(
+                        fontSize: 30.0,
+                        fontWeight: FontWeight.w900,
+                        color: Color.fromRGBO(62, 31, 49, 1.0),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 40.0,
+                    ),
+                    // full name
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter Full name';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        label: const Text('Full Name'),
+                        hintText: 'Enter Full Name',
+                        hintStyle: const TextStyle(
+                          color: Color.fromRGBO(211, 218, 206, 1.0),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Colors.black12, // Default border color
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Colors.black12, // Default border color
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 25.0,
+                    ),
+                    // email
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter Email';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        label: const Text('Email'),
+                        hintText: 'Enter Email',
+                        hintStyle: const TextStyle(
+                          color: Color.fromRGBO(211, 218, 206, 1.0),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Colors.black12, // Default border color
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Colors.black12, // Default border color
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 25.0,
+                    ),
+                    // password
+                    TextFormField(
+                      obscureText: true,
+                      obscuringCharacter: '*',
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Please enter Password';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                        label: const Text('Password'),
+                        hintText: 'Enter Password',
+                        hintStyle: const TextStyle(
+                          color: Color.fromRGBO(211, 218, 206, 1.0),
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Colors.black12, // Default border color
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Colors.black12, // Default border color
+                          ),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 25.0,
+                    ),
+                    // i agree to the processing
+
+                    const SizedBox(
+                      height: 15.0,
+                    ),
+                    // signup button
+                    SizedBox(
+                      width: MediaQuery.sizeOf(context).width * 0.3,
+                      child: ElevatedButton(
+                        style: TextButton.styleFrom(
+                          backgroundColor: Color.fromRGBO(62, 31, 49, 1.0),
+                        ),
+                        onPressed: () {
+                          if (_formSignupKey.currentState!.validate()) {
+                            Navigator.pushReplacementNamed(
+                                context, AppRoutes.homeView);
+                          }
+                        },
+                        child: const Text('Sign up',
                         style: TextStyle(
-                          fontSize: 30.0,
-                          fontWeight: FontWeight.w900,
-                          color: Color.fromRGBO(62, 31, 49, 1.0),
+                          color: Colors.white,
+                        ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 40.0,
-                      ),
-                      // full name
-                      TextFormField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter Full name';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          label: const Text('Full Name'),
-                          hintText: 'Enter Full Name',
-                          hintStyle: const TextStyle(
-                            color: Colors.black26,
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Colors.black12, // Default border color
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Colors.black12, // Default border color
-                            ),
-                            borderRadius: BorderRadius.circular(10),
+                    ),
+                    const SizedBox(
+                      height: 25.0,
+                    ),
+                    // sign up divider
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Divider(
+                            thickness: 0.7,
+                            color: Colors.grey.withOpacity(0.5),
                           ),
                         ),
-                      ),
-                      const SizedBox(
-                        height: 25.0,
-                      ),
-                      // email
-                      TextFormField(
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter Email';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          label: const Text('Email'),
-                          hintText: 'Enter Email',
-                          hintStyle: const TextStyle(
-                            color: Colors.black26,
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 0,
+                            horizontal: 10,
                           ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Colors.black12, // Default border color
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Colors.black12, // Default border color
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 25.0,
-                      ),
-                      // password
-                      TextFormField(
-                        obscureText: true,
-                        obscuringCharacter: '*',
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please enter Password';
-                          }
-                          return null;
-                        },
-                        decoration: InputDecoration(
-                          label: const Text('Password'),
-                          hintText: 'Enter Password',
-                          hintStyle: const TextStyle(
-                            color: Colors.black26,
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Colors.black12, // Default border color
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(
-                              color: Colors.black12, // Default border color
-                            ),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 25.0,
-                      ),
-                      // i agree to the processing
-
-                      const SizedBox(
-                        height: 25.0,
-                      ),
-                      // signup button
-                      SizedBox(
-                        width: MediaQuery.sizeOf(context).width * 0.3,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            if (_formSignupKey.currentState!.validate()) {
-                              Navigator.pushReplacementNamed(
-                                  context, AppRoutes.homeView);
-                            }
-                          },
-                          child: const Text('Sign up'),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
-                      // sign up divider
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Expanded(
-                            child: Divider(
-                              thickness: 0.7,
-                              color: Colors.grey.withOpacity(0.5),
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 0,
-                              horizontal: 10,
-                            ),
-                            child: Text(
-                              'Sign up with',
-                              style: TextStyle(
-                                color: Colors.black45,
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: Divider(
-                              thickness: 0.7,
-                              color: Colors.grey.withOpacity(0.5),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 30.0,
-                      ),
-                      // sign up social media logo
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          SvgPicture.asset(
-                              "assets/images/icons8-google-logo.svg"),
-
-                          ///Logo(Logos.google),
-                          // Image.asset("assets/images/google_300221.png",
-                          //   height: 40,
-                          // width: 40,)
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 25.0,
-                      ),
-                      // already have an account
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'Already have an account? ',
+                          child: Text(
+                            'Sign up with',
                             style: TextStyle(
-                              color: Colors.black45,
+                              color: Color.fromRGBO(21, 21, 33, 1.0),
                             ),
                           ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.pushReplacementNamed(
-                                  context, AppRoutes.signInView);
-                            },
-                            child: Text(
-                              'Sign in',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromRGBO(62, 31, 49, 1.0),
-                              ),
+                        ),
+                        Expanded(
+                          child: Divider(
+                            thickness: 0.7,
+                            color: Colors.grey.withOpacity(0.5),
+                            ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    // sign up social media logo
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        SvgPicture.asset(
+                            "assets/images/icons8-google-logo.svg"),
+
+                        ///Logo(Logos.google),
+                        // Image.asset("assets/images/google_300221.png",
+                        //   height: 40,
+                        // width: 40,)
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 20.0,
+                    ),
+                    // already have an account
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          'Already have an account? ',
+                          style: TextStyle(
+                            color: Color.fromRGBO(21, 21, 33, 1.0),
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushReplacementNamed(
+                                context, AppRoutes.signInView);
+                          },
+                          child: Text(
+                            'Sign in',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(62, 31, 49, 1.0),
                             ),
                           ),
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 20.0,
-                      ),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                  ],
                 ),
               ),
             ),

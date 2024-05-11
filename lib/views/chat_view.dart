@@ -19,8 +19,9 @@ class _ChatViewState extends State<ChatView> {
   @override
   Widget build(BuildContext context) {
     void getAnswer() async {
+      // API
       const url =
-          "https://generativelanguage.googleapis.com/v1beta2/models/chat-bison-001:generateMessage?key=<AIzaSyBosEVfTv8aAyhFM7nXbLyvbeXFB1t4snQ>";
+          "";
       final uri = Uri.parse(url);
       List<Map<String, String>> msg = [];
       for (var i = 0; i < _chatHistory.length; i++) {
@@ -85,7 +86,7 @@ class _ChatViewState extends State<ChatView> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: (_chatHistory[index]["isSender"]
-                            ? Colors.blue
+                            ? Color.fromRGBO(51, 65, 115, 1.0)
                             : Colors.white),
                       ),
                       padding: const EdgeInsets.all(16),
@@ -105,10 +106,10 @@ class _ChatViewState extends State<ChatView> {
             ),
           ),
           Container(
-            margin: EdgeInsetsDirectional.only(top: 30),
-            width: MediaQuery.sizeOf(context).width * .8,
+            margin: EdgeInsetsDirectional.only(top: 5),
+            width: MediaQuery.sizeOf(context).width * .9,
             decoration: BoxDecoration(
-             color: Colors.purple,
+             color: Color.fromRGBO(30, 31, 33, 1.0),
 
               borderRadius: BorderRadius.circular(40),
             ),
@@ -117,7 +118,7 @@ class _ChatViewState extends State<ChatView> {
               maxLines: 2,
               decoration: InputDecoration(
                 contentPadding:
-                    const EdgeInsetsDirectional.only(start: 20.0, top: 20.0),
+                    const EdgeInsetsDirectional.only(start: 15.0, top: 20.0),
                 suffixIcon: MaterialButton(
                   onPressed: () {
                     setState(() {

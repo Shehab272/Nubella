@@ -1,14 +1,13 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
+
 import 'package:nubella/models/conversation.dart';
 import 'package:nubella/routes.dart';
 
 import 'package:nubella/views/widgets/example_widget.dart';
 
 import 'widgets/chat_list_view.dart';
-import 'widgets/chat_text_field.dart';
+
 
 ///final TextEditingController controller = TextEditingController();
 

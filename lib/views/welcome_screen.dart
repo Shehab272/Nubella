@@ -22,25 +22,26 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 child: const Column(
                   children: [
+                    SizedBox(height: 100),
                     Text(
                       ' Nebulla AI ',
                       style: TextStyle(
-                        fontSize: 70,
+                        fontSize: 60,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
                     Text(
                       ' for your life development ',
                       style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.w400,
-                          color: Color.fromRGBO(36, 50, 88, 1.0)),
+                          fontSize: 27,
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromRGBO(44, 29, 81, 1.0)),
                     ),
-                    SizedBox(height: 60,),
+                    SizedBox(height: 130,),
                     Text(
                       'Welcome Back!',
                       style: TextStyle(
-                        fontSize: 50.0,
+                        fontSize: 45.0,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -56,7 +57,7 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 SizedBox(
                   height: 65,
-                  width: MediaQuery.sizeOf(context).width * 0.2,
+                  width: MediaQuery.sizeOf(context).width * 0.3,
                   child: WelcomeButton(
                     buttonText: 'Sign in',
                     onTap: () {
@@ -75,7 +76,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 SizedBox(
                   height: 65,
-                  width: MediaQuery.sizeOf(context).width * 0.2,
+                  width: MediaQuery.sizeOf(context).width * 0.3,
                   child: WelcomeButton(
                     buttonText: 'Sign Up',
                     onTap: () {
