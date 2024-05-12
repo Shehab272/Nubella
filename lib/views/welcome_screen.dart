@@ -24,7 +24,7 @@ class WelcomeScreen extends StatelessWidget {
                   children: [
                     SizedBox(height: 100),
                     Text(
-                      ' Nebulla AI ',
+                      ' Nebula AI ',
                       style: TextStyle(
                         fontSize: 60,
                         fontWeight: FontWeight.w900,

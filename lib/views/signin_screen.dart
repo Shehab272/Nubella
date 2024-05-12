@@ -28,9 +28,9 @@ class _SignInViewState extends State<SignInView> {
             ),
           ),
           Expanded(
-            flex: 7,
+            flex: 8,
             child: Container(
-              padding: const EdgeInsets.fromLTRB(25.0, 35.0, 25.0, 20.0),
+              padding: const EdgeInsets.fromLTRB(25.0, 35.0, 25.0, 0.0),
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(167, 158, 226, 60.0),
                 borderRadius: BorderRadius.only(
@@ -151,7 +151,7 @@ class _SignInViewState extends State<SignInView> {
                       ],
                     ),
                     const SizedBox(
-                      height: 15.0,
+                      height: 20.0,
                     ),
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width*0.3,
@@ -160,16 +160,9 @@ class _SignInViewState extends State<SignInView> {
                           backgroundColor: Color.fromRGBO(62, 31, 49, 1.0),
                         ),
                         onPressed: () {
-                          if (_formSignInKey.currentState!.validate() &&
-                              rememberPassword) {
+                          if (_formSignInKey.currentState!.validate()) {
                             Navigator.pushReplacementNamed(
                                 context, AppRoutes.homeView);
-                          } else if (!rememberPassword) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                  content: Text(
-                                      'Please agree to the processing of personal data')),
-                            );
                           }
                         },
                         child: const Text(
@@ -250,9 +243,9 @@ class _SignInViewState extends State<SignInView> {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 10.0,
-                    ),
+                    // const SizedBox(
+                    //   height: 10.0,
+                    // ),
                   ],
                 ),
               ),

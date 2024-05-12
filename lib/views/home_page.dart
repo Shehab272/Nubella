@@ -44,7 +44,7 @@ var size  = MediaQuery.sizeOf(context).width;
                   Image.asset("assets/images/logo.png"),
                   SizedBox(height: 24),
                   Text(
-                    "Welcome To \n Nubella",
+                    "Welcome To \n Nebula",
                     style: textTheme.headlineLarge?.copyWith(
                         fontWeight: FontWeight.bold, color: Colors.white),
                     textAlign: TextAlign.center,

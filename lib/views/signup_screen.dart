@@ -26,9 +26,9 @@ class _SignUpViewState extends State<SignUpView> {
             ),
           ),
           Expanded(
-            flex: 18,
+            flex: 15,
             child: Container(
-              padding: const EdgeInsets.fromLTRB(25.0, 35.0, 25.0, 20.0),
+              padding: const EdgeInsets.fromLTRB(25.0, 30.0, 25.0, 20.0),
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(167, 158, 226, 60.0),
                 borderRadius: BorderRadius.only(
@@ -51,7 +51,7 @@ class _SignUpViewState extends State<SignUpView> {
                       ),
                     ),
                     const SizedBox(
-                      height: 40.0,
+                      height: 35.0,
                     ),
                     // full name
                     TextFormField(
@@ -82,7 +82,7 @@ class _SignUpViewState extends State<SignUpView> {
                       ),
                     ),
                     const SizedBox(
-                      height: 25.0,
+                      height: 22.0,
                     ),
                     // email
                     TextFormField(
@@ -113,7 +113,7 @@ class _SignUpViewState extends State<SignUpView> {
                       ),
                     ),
                     const SizedBox(
-                      height: 25.0,
+                      height: 22.0,
                     ),
                     // password
                     TextFormField(
@@ -146,13 +146,10 @@ class _SignUpViewState extends State<SignUpView> {
                       ),
                     ),
                     const SizedBox(
-                      height: 25.0,
+                      height: 15.0,
                     ),
                     // i agree to the processing
 
-                    const SizedBox(
-                      height: 15.0,
-                    ),
                     // signup button
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width * 0.3,
@@ -174,7 +171,7 @@ class _SignUpViewState extends State<SignUpView> {
                       ),
                     ),
                     const SizedBox(
-                      height: 25.0,
+                      height: 20.0,
                     ),
                     // sign up divider
                     Row(
@@ -207,7 +204,7 @@ class _SignUpViewState extends State<SignUpView> {
                       ],
                     ),
                     const SizedBox(
-                      height: 20.0,
+                      height: 15.0,
                     ),
                     // sign up social media logo
                     Row(
@@ -223,7 +220,7 @@ class _SignUpViewState extends State<SignUpView> {
                       ],
                     ),
                     const SizedBox(
-                      height: 20.0,
+                      height: 18.0,
                     ),
                     // already have an account
                     Row(
@@ -249,9 +246,6 @@ class _SignUpViewState extends State<SignUpView> {
                           ),
                         ),
                       ],
-                    ),
-                    const SizedBox(
-                      height: 10.0,
                     ),
                   ],
                 ),
