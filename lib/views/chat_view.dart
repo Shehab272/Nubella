@@ -21,7 +21,7 @@ class _ChatViewState extends State<ChatView> {
     void getAnswer() async {
       
       const url =
-          "sk-proj-D1XQHLV1lhTMQskEyhzsT3BlbkFJGCHibx497BNUeHRM4RQS";
+          "";
       final uri = Uri.parse(url);
       List<Map<String, String>> msg = [];
       for (var i = 0; i < _chatHistory.length; i++) {
