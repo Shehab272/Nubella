@@ -30,7 +30,7 @@ class _SignInViewState extends State<SignInView> {
           Expanded(
             flex: 8,
             child: Container(
-              padding: const EdgeInsets.fromLTRB(25.0, 35.0, 25.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(25.0, 20.0, 25.0, 0.0),
               decoration: const BoxDecoration(
                 color: Color.fromRGBO(167, 158, 226, 60.0),
                 borderRadius: BorderRadius.only(
@@ -38,215 +38,217 @@ class _SignInViewState extends State<SignInView> {
                   topRight: Radius.circular(40.0),
                 ),
               ),
-              child: Form(
-                key: _formSignInKey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    const Text(
-                      'Welcome back',
-                      style: TextStyle(
-                        fontSize: 30.0,
-                        fontWeight: FontWeight.w900,
-                        color: Color.fromRGBO(62, 31, 49, 1.0),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 40.0,
-                    ),
-                    TextFormField(
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter Email';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        label: const Text('Email'),
-                        hintText: 'Enter Email',
-                        hintStyle: const TextStyle(
-                          color: Color.fromRGBO(211, 218, 206, 1.0),
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Colors.black12, // Default border color
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Colors.black12, // Default border color
-                          ),
-                          borderRadius: BorderRadius.circular(10),
+              child: SingleChildScrollView(
+                child: Form(
+                  key: _formSignInKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Welcome back',
+                        style: TextStyle(
+                          fontSize: 30.0,
+                          fontWeight: FontWeight.w900,
+                          color: Color.fromRGBO(62, 31, 49, 1.0),
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 25.0,
-                    ),
-                    TextFormField(
-                      obscureText: true,
-                      obscuringCharacter: '*',
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please enter Password';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        label: const Text('Password'),
-                        hintText: 'Enter Password',
-                        hintStyle: const TextStyle(
-                          color: Color.fromRGBO(211, 218, 206, 1.0),
-                        ),
-                        border: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Colors.black12, // Default border color
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(
-                            color: Colors.black12, // Default border color
-                          ),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
+                      const SizedBox(
+                        height: 40.0,
                       ),
-                    ),
-                    const SizedBox(
-                      height: 25.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Row(
-                          children: [
-                            Checkbox(
-                              value: rememberPassword,
-                              onChanged: (bool? value) {
-                                setState(() {
-                                  rememberPassword = value!;
-                                });
-                              },
-                              activeColor:
-                                  const Color.fromRGBO(93, 93, 147, 1.0),
+                      TextFormField(
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter Email';
+                          }
+                          return null;
+                        },
+                        decoration: InputDecoration(
+                          label: const Text('Email'),
+                          hintText: 'Enter Email',
+                          hintStyle: const TextStyle(
+                            color: Color.fromRGBO(211, 218, 206, 1.0),
+                          ),
+                          border: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.black12, // Default border color
                             ),
-                            const Text(
-                              'Remember me',
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.black12, // Default border color
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25.0,
+                      ),
+                      TextFormField(
+                        obscureText: true,
+                        obscuringCharacter: '*',
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter Password';
+                          }
+                          return null;
+                        },
+                        decoration: InputDecoration(
+                          label: const Text('Password'),
+                          hintText: 'Enter Password',
+                          hintStyle: const TextStyle(
+                            color: Color.fromRGBO(211, 218, 206, 1.0),
+                          ),
+                          border: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.black12, // Default border color
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                            borderSide: const BorderSide(
+                              color: Colors.black12, // Default border color
+                            ),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Checkbox(
+                                value: rememberPassword,
+                                onChanged: (bool? value) {
+                                  setState(() {
+                                    rememberPassword = value!;
+                                  });
+                                },
+                                activeColor:
+                                    const Color.fromRGBO(93, 93, 147, 1.0),
+                              ),
+                              const Text(
+                                'Remember me',
+                                style: TextStyle(
+                                  color: Color.fromRGBO(21, 21, 33, 1.0),
+                                ),
+                              ),
+                            ],
+                          ),
+                          GestureDetector(
+                            child: const Text(
+                              'Forget password?',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromRGBO(62, 31, 49, 1.0),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width*0.3,
+                        child: ElevatedButton(
+                          style: TextButton.styleFrom(
+                            backgroundColor: Color.fromRGBO(62, 31, 49, 1.0),
+                          ),
+                          onPressed: () {
+                            if (_formSignInKey.currentState!.validate()) {
+                              Navigator.pushReplacementNamed(
+                                  context, AppRoutes.homeView);
+                            }
+                          },
+                          child: const Text(
+                            'Sign in',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 25.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: Divider(
+                              thickness: 0.7,
+                              color: Colors.grey.withOpacity(0.5),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(
+                              vertical: 0,
+                              horizontal: 10,
+                            ),
+                            child: Text(
+                              'Sign in with',
                               style: TextStyle(
                                 color: Color.fromRGBO(21, 21, 33, 1.0),
                               ),
                             ),
-                          ],
-                        ),
-                        GestureDetector(
-                          child: const Text(
-                            'Forget password?',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromRGBO(62, 31, 49, 1.0),
+                          ),
+                          Expanded(
+                            child: Divider(
+                              thickness: 0.7,
+                              color: Colors.grey.withOpacity(0.5),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    SizedBox(
-                      width: MediaQuery.sizeOf(context).width*0.3,
-                      child: ElevatedButton(
-                        style: TextButton.styleFrom(
-                          backgroundColor: Color.fromRGBO(62, 31, 49, 1.0),
-                        ),
-                        onPressed: () {
-                          if (_formSignInKey.currentState!.validate()) {
-                            Navigator.pushReplacementNamed(
-                                context, AppRoutes.homeView);
-                          }
-                        },
-                        child: const Text(
-                          'Sign in',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
+                        ],
                       ),
-                    ),
-                    const SizedBox(
-                      height: 25.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.7,
-                            color: Colors.grey.withOpacity(0.5),
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 0,
-                            horizontal: 10,
-                          ),
-                          child: Text(
-                            'Sign in with',
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          SvgPicture.asset(
+                              "assets/images/icons8-google-logo.svg"),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20.0,
+                      ),
+                      // don't have an account
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Text(
+                            'Don\'t have an account? ',
                             style: TextStyle(
                               color: Color.fromRGBO(21, 21, 33, 1.0),
                             ),
                           ),
-                        ),
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.7,
-                            color: Colors.grey.withOpacity(0.5),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        SvgPicture.asset(
-                            "assets/images/icons8-google-logo.svg"),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20.0,
-                    ),
-                    // don't have an account
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Don\'t have an account? ',
-                          style: TextStyle(
-                            color: Color.fromRGBO(21, 21, 33, 1.0),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.pushReplacementNamed(
-                                context, AppRoutes.signUpView);
-                          },
-                          child: const Text(
-                            'Sign up',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromRGBO(62, 31, 49, 1.0),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.pushReplacementNamed(
+                                  context, AppRoutes.signUpView);
+                            },
+                            child: const Text(
+                              'Sign up',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromRGBO(62, 31, 49, 1.0),
+                              ),
                             ),
                           ),
-                        ),
-                      ],
-                    ),
-                    // const SizedBox(
-                    //   height: 10.0,
-                    // ),
-                  ],
+                        ],
+                      ),
+                      // const SizedBox(
+                      //   height: 10.0,
+                      // ),
+                    ],
+                  ),
                 ),
               ),
             ),

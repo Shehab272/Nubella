@@ -18,31 +18,43 @@ class WelcomeScreen extends StatelessWidget {
               child: Container(
                 padding: const EdgeInsets.symmetric(
                   vertical: 0,
-                  horizontal: 45.0,
+                  horizontal: 60.0,
                 ),
                 child: const Column(
                   children: [
-                    SizedBox(height: 100),
+                    SizedBox(height: 60),
                     Text(
                       ' Nebula AI ',
                       style: TextStyle(
                         fontSize: 60,
                         fontWeight: FontWeight.w900,
+                          color: Color.fromRGBO(245, 180, 180, 1.0)
+                      ),
+                    ),
+                    //Harness the Nebula s Wisdom with Our AI System.
+                    Text(
+                      ' Beyond the Stars, at Your Service ',
+                      style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w800,
+                          color: Color.fromRGBO(211, 218, 206, 1.0),
                       ),
                     ),
                     Text(
-                      ' for your life development ',
+                      ' Harness the Nebula s Wisdom with Our AI System.',
                       style: TextStyle(
-                          fontSize: 27,
-                          fontWeight: FontWeight.w700,
-                          color: Color.fromRGBO(44, 29, 81, 1.0)),
+                          fontSize: 30,
+                          fontWeight: FontWeight.w800,
+                          color: Color.fromRGBO(211, 218, 206, 1.0),
+                      ),
                     ),
-                    SizedBox(height: 130,),
+                    SizedBox(height: 80,),
                     Text(
                       'Welcome Back!',
                       style: TextStyle(
                         fontSize: 45.0,
                         fontWeight: FontWeight.w500,
+                        color: Colors.white,
                       ),
                     ),
                   ],
@@ -55,7 +67,7 @@ class WelcomeScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                SizedBox(
+                SizedBox (
                   height: 65,
                   width: MediaQuery.sizeOf(context).width * 0.3,
                   child: WelcomeButton(
