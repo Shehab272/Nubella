@@ -28,11 +28,11 @@ class _SignInViewState extends State<SignInView> {
             ),
           ),
           Expanded(
-            flex: 8,
+            flex: 15,
             child: Container(
-              padding: const EdgeInsets.fromLTRB(25.0, 20.0, 25.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(25.0, 30.0, 25.0, 20.0),
               decoration: const BoxDecoration(
-                color: Color.fromRGBO(167, 158, 226, 60.0),
+                color: Color.fromRGBO(191, 184, 234, 80.0),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(40.0),
                   topRight: Radius.circular(40.0),
@@ -142,6 +142,7 @@ class _SignInViewState extends State<SignInView> {
                           ),
                           GestureDetector(
                             child: const Text(
+
                               'Forget password?',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,

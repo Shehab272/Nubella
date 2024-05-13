@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:nubella/views/signin_screen.dart';
 import 'package:nubella/views/signup_screen.dart';
 import 'package:nubella/views/widgets/custom_scaffold.dart';
 import 'package:nubella/views/widgets/welcome_button.dart';
+
+import '../theme/gradient.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -27,13 +30,16 @@ class WelcomeScreen extends StatelessWidget {
                       ' Nebula AI ',
                       style: TextStyle(
                         fontSize: 60,
+
                         fontWeight: FontWeight.w900,
-                          color: Color.fromRGBO(245, 180, 180, 1.0)
+                          color: Color.fromRGBO(157, 54, 21, 1.0),
+
+
                       ),
                     ),
                     //Harness the Nebula s Wisdom with Our AI System.
                     Text(
-                      ' Beyond the Stars, at Your Service ',
+                      ' Beyond the Stars,at Your Service ',
                       style: TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w800,

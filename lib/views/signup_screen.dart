@@ -29,9 +29,9 @@ class _SignUpViewState extends State<SignUpView> {
             flex: 15,
             child: SingleChildScrollView(
               child: Container(
-                padding: const EdgeInsets.fromLTRB(25.0, 30.0, 25.0, 20.0),
+                padding: const EdgeInsets.fromLTRB(25.0, 40.0, 25.0, 50.0),
                 decoration: const BoxDecoration(
-                  color: Color.fromRGBO(167, 158, 226, 60.0),
+                  color: Color.fromRGBO(191, 184, 234, 80.0),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(40.0),
                     topRight: Radius.circular(40.0),
@@ -52,7 +52,7 @@ class _SignUpViewState extends State<SignUpView> {
                         ),
                       ),
                       const SizedBox(
-                        height: 35.0,
+                        height: 25.0,
                       ),
                       // full name
                       TextFormField(
@@ -83,7 +83,7 @@ class _SignUpViewState extends State<SignUpView> {
                         ),
                       ),
                       const SizedBox(
-                        height: 22.0,
+                        height: 25.0,
                       ),
                       // email
                       TextFormField(
@@ -114,7 +114,7 @@ class _SignUpViewState extends State<SignUpView> {
                         ),
                       ),
                       const SizedBox(
-                        height: 22.0,
+                        height: 25.0,
                       ),
                       // password
                       TextFormField(
@@ -147,7 +147,7 @@ class _SignUpViewState extends State<SignUpView> {
                         ),
                       ),
                       const SizedBox(
-                        height: 15.0,
+                        height: 25.0,
                       ),
                       // i agree to the processing
 
@@ -172,7 +172,7 @@ class _SignUpViewState extends State<SignUpView> {
                         ),
                       ),
                       const SizedBox(
-                        height: 20.0,
+                        height: 25.0,
                       ),
                       // sign up divider
                       Row(
@@ -205,7 +205,7 @@ class _SignUpViewState extends State<SignUpView> {
                         ],
                       ),
                       const SizedBox(
-                        height: 15.0,
+                        height: 25.0,
                       ),
                       // sign up social media logo
                       Row(
@@ -221,7 +221,7 @@ class _SignUpViewState extends State<SignUpView> {
                         ],
                       ),
                       const SizedBox(
-                        height: 18.0,
+                        height: 15.0,
                       ),
                       // already have an account
                       Row(
