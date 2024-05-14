@@ -1,15 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import 'package:nubella/theme/gradient.dart';
 import 'package:nubella/views/signin_screen.dart';
 import 'package:nubella/views/signup_screen.dart';
 import 'package:nubella/views/widgets/custom_scaffold.dart';
 import 'package:nubella/views/widgets/welcome_button.dart';
 
-import '../theme/gradient.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +28,29 @@ class WelcomeScreen extends StatelessWidget {
                 child: const Column(
                   children: [
                     SizedBox(height: 60),
-                    Text(
-                      ' Nebula AI ',
-                      style: TextStyle(
-                        fontSize: 60,
-
-                        fontWeight: FontWeight.w900,
-                          color: Color.fromRGBO(157, 54, 21, 1.0),
-
-
-                      ),
-                    ),
+                    // Text(
+                    //   ' Nebula AI ',
+                    //   style: TextStyle(
+                    //     fontSize: 60,
+                    //     fontWeight: FontWeight.w900,
+                    //       //color: Color.fromRGBO(157, 54, 21, 1.0),
+                    //   ),
+                    // ),
                     //Harness the Nebula s Wisdom with Our AI System.
+                    GradientText(
+                      'Nebula AI',
+                      style: const TextStyle(fontSize: 60,fontWeight: FontWeight.w900,),
+                      gradient: LinearGradient(colors: [
+                        Color(0xff1f005c),
+                        Color(0xff5b0060),
+                        Color(0xff870160),
+                        Color(0xffac255e),
+                        Color(0xffca485c),
+                        Color(0xffe16b5c),
+                        Color(0xfff39060),
+                        Color(0xffffb56b),
+                      ]),
+                    ),
                     Text(
                       ' Beyond the Stars,at Your Service ',
                       style: TextStyle(
