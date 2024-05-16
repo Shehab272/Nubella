@@ -21,11 +21,11 @@ class WelcomeScreen extends StatelessWidget {
           Flexible(
               flex: 8,
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 0,
-                  horizontal: 60.0,
+                 padding: const EdgeInsets.symmetric(
+                   vertical: 0,
+                   horizontal: 60.0,
                 ),
-                child: const Column(
+                child:  Column(
                   children: [
                     SizedBox(height: 60),
                     // Text(
@@ -39,9 +39,9 @@ class WelcomeScreen extends StatelessWidget {
                     //Harness the Nebula s Wisdom with Our AI System.
                     GradientText(
                       'Nebula AI',
-                      style: const TextStyle(fontSize: 60,fontWeight: FontWeight.w900,),
+                      style:  TextStyle(fontSize: MediaQuery.of(context).size.height * 0.08,fontWeight: FontWeight.w900,),
                       gradient: LinearGradient(colors: [
-                        Color(0xff1f005c),
+                        //Color(0xff1f005c),
                         Color(0xff5b0060),
                         Color(0xff870160),
                         Color(0xffac255e),
@@ -51,27 +51,28 @@ class WelcomeScreen extends StatelessWidget {
                         Color(0xffffb56b),
                       ]),
                     ),
+                    SizedBox(height:10),
                     Text(
-                      ' Beyond the Stars,at Your Service ',
+                      'Beyond the Stars,at Your Service',
                       style: TextStyle(
-                          fontSize: 30,
+                          fontSize: MediaQuery.of(context).size.height * 0.04,
                           fontWeight: FontWeight.w800,
                           color: Color.fromRGBO(211, 218, 206, 1.0),
                       ),
                     ),
                     Text(
-                      ' Harness the Nebula s Wisdom with Our AI System.',
+                      'Harness the Nebula\'s Wisdom with Our AI System.',
                       style: TextStyle(
-                          fontSize: 30,
+                          fontSize: MediaQuery.of(context).size.height * 0.04,
                           fontWeight: FontWeight.w800,
                           color: Color.fromRGBO(211, 218, 206, 1.0),
                       ),
                     ),
-                    SizedBox(height: 80,),
+                    SizedBox(height: 80),
                     Text(
                       'Welcome Back!',
                       style: TextStyle(
-                        fontSize: 45.0,
+                        fontSize: MediaQuery.of(context).size.height * 0.05,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),

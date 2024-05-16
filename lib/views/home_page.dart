@@ -6,6 +6,8 @@ import 'package:nubella/routes.dart';
 
 import 'package:nubella/views/widgets/example_widget.dart';
 
+import 'signup_screen.dart';
+import 'welcome_screen.dart';
 import 'widgets/chat_list_view.dart';
 
 
@@ -34,10 +36,19 @@ var size  = MediaQuery.sizeOf(context).width;
         child: SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 20),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Align(
+                  child: ElevatedButton(
+                    onPressed: () {},
+                    child: Icon(Icons.logout_sharp,color: Color.fromRGBO(99, 137, 241, 1.0)),
+                  ),
+                  alignment: Alignment.topLeft,
+                ),
+
+
                 ///Logo
                 if (!isConversationStarted) ...[
                   SizedBox(height: 10),

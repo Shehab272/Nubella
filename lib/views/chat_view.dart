@@ -45,14 +45,13 @@ class _ChatViewState extends State<ChatView> {
           "time": DateTime.now(),
           "message": json.decode(response.body)["candidates"][0]["content"],
           "isSender": false,
+          "Receiver": false,
         });
       });
-
       _scrollController.jumpTo(
         _scrollController.position.maxScrollExtent,
       );
     }
-
     return Scaffold(
       backgroundColor: Color.fromRGBO(21, 21, 33, 1.0),
       appBar: AppBar(
@@ -111,7 +110,7 @@ class _ChatViewState extends State<ChatView> {
               width: MediaQuery.sizeOf(context).width * .9,
               decoration: BoxDecoration(
                color: Color.fromRGBO(30, 31, 33, 1.0),
-        
+
                 borderRadius: BorderRadius.circular(40),
               ),
               child: TextField(
@@ -135,7 +134,7 @@ class _ChatViewState extends State<ChatView> {
                       _scrollController.jumpTo(
                         _scrollController.position.maxScrollExtent,
                       );
-        
+
                       getAnswer();
                     },
                     shape: const StadiumBorder(),
