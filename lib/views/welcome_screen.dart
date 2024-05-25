@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:nubella/theme/gradient.dart';
 import 'package:nubella/views/signin_screen.dart';
 import 'package:nubella/views/signup_screen.dart';
@@ -27,18 +28,12 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 child:  Column(
                   children: [
-                    SizedBox(height: 60),
-                    // Text(
-                    //   ' Nebula AI ',
-                    //   style: TextStyle(
-                    //     fontSize: 60,
-                    //     fontWeight: FontWeight.w900,
-                    //       //color: Color.fromRGBO(157, 54, 21, 1.0),
-                    //   ),
-                    // ),
-                    //Harness the Nebula s Wisdom with Our AI System.
+                    //SizedBox(height: 0),
+                    SvgPicture.asset(height: 90,color: Color.fromRGBO(220, 129, 78, 1.0),
+                        "assets/images/logo.svg"
+                    ),
                     GradientText(
-                      'Nebula AI',
+                      'NEBULA ',
                       style:  TextStyle(fontSize: MediaQuery.of(context).size.height * 0.08,fontWeight: FontWeight.w900,),
                       gradient: LinearGradient(colors: [
                         //Color(0xff1f005c),

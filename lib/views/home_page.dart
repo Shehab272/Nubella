@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:nubella/models/conversation.dart';
 import 'package:nubella/routes.dart';
@@ -36,7 +37,7 @@ var size  = MediaQuery.sizeOf(context).width;
         child: SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 7),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -47,27 +48,27 @@ var size  = MediaQuery.sizeOf(context).width;
                   ),
                   alignment: Alignment.topLeft,
                 ),
-
-
                 ///Logo
                 if (!isConversationStarted) ...[
-                  SizedBox(height: 10),
-                  Image.asset("assets/images/logo.png"),
-                  SizedBox(height: 24),
+                  // SizedBox(height: 10),
+
+                  SvgPicture.asset(height: 90,color: Color.fromRGBO(220, 129, 78, 1.0),
+                      "assets/images/logo.svg"
+                  ),
+                  // SizedBox(height: 5),
                   Text(
                     "Welcome To \n Nebula",
                     style: textTheme.headlineLarge?.copyWith(
                         fontWeight: FontWeight.bold, color: Colors.white),
                     textAlign: TextAlign.center,
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 20),
                   Text(
                     "How can I help you today?",
                     style: TextStyle(
                       fontSize: 20,
                       color: Color.fromRGBO(99, 137, 241, 1.0)
                     ),
-
                   ),
                   Expanded(
                     child: Center(
@@ -135,7 +136,6 @@ var size  = MediaQuery.sizeOf(context).width;
                   ),
                 ),
                 // ),
-
               ],
             ),
           ),
